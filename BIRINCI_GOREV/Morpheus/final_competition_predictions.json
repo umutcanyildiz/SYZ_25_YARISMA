@@ -1,0 +1,110 @@
+{
+  "kunye": {
+    "takim_adi": "Morpheus",
+    "takim_id": "568784",
+    "aciklama": "StrokeViT Hybrid Model (ResNet50 + ViT)",
+    "versiyon": "v1.0"
+  },
+  "tahminler": [
+    {
+      "filename": "110248_yok.png",
+      "stroke": 0,
+      "stroke_type": 3
+    },
+    {
+      "filename": "110386_yok.png",
+      "stroke": 0,
+      "stroke_type": 3
+    },
+    {
+      "filename": "110911_yok.png",
+      "stroke": 1,
+      "stroke_type": 3
+    },
+    {
+      "filename": "112174_yok.png",
+      "stroke": 0,
+      "stroke_type": 3
+    },
+    {
+      "filename": "115407_yok.png",
+      "stroke": 1,
+      "stroke_type": 3
+    },
+    {
+      "filename": "118100_yok.png",
+      "stroke": 1,
+      "stroke_type": 3
+    },
+    {
+      "filename": "124057_yok.png",
+      "stroke": 0,
+      "stroke_type": 3
+    },
+    {
+      "filename": "130503_yok.png",
+      "stroke": 1,
+      "stroke_type": 3
+    },
+    {
+      "filename": "131605_yok.png",
+      "stroke": 0,
+      "stroke_type": 3
+    },
+    {
+      "filename": "var1.png",
+      "stroke": 0,
+      "stroke_type": 3
+    },
+    {
+      "filename": "var10.png",
+      "stroke": 1,
+      "stroke_type": 3
+    },
+    {
+      "filename": "var11.png",
+      "stroke": 1,
+      "stroke_type": 3
+    },
+    {
+      "filename": "var2.png",
+      "stroke": 0,
+      "stroke_type": 3
+    },
+    {
+      "filename": "var3.png",
+      "stroke": 1,
+      "stroke_type": 3
+    },
+    {
+      "filename": "var4.png",
+      "stroke": 0,
+      "stroke_type": 3
+    },
+    {
+      "filename": "var5.png",
+      "stroke": 1,
+      "stroke_type": 3
+    },
+    {
+      "filename": "var6.png",
+      "stroke": 1,
+      "stroke_type": 3
+    },
+    {
+      "filename": "var7.png",
+      "stroke": 1,
+      "stroke_type": 3
+    },
+    {
+      "filename": "var8.png",
+      "stroke": 1,
+      "stroke_type": 3
+    },
+    {
+      "filename": "var9.png",
+      "stroke": 1,
+      "stroke_type": 3
+    }
+  ]
+}
