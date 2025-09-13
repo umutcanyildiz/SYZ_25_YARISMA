@@ -192,7 +192,7 @@ def convert_dicom_directory(input_directory, output_directory, max_workers=6, ba
     console.print("[yellow]Başarısız dosyalar (varsa) 'failed_files.txt' içine kaydedildi.[/yellow]")
 
 if __name__ == '__main__':
-    input_dir = "/home/comp5/ARTEK/SYZ_25_YARISMA/deneme_dcom"
-    output_dir = "/home/comp5/ARTEK/SYZ_25_YARISMA/deneme_png"
+    input_dir = "/home/comp5/ARTEK/SYZ_25_YARISMA/BIRINCI_GOREV/ornek_veriler/deneme_dcom"
+    output_dir = "/home/comp5/ARTEK/SYZ_25_YARISMA/BIRINCI_GOREV/ornek_veriler/deneme_png"
 
     convert_dicom_directory(input_dir, output_dir, max_workers=16, batch_size=128)

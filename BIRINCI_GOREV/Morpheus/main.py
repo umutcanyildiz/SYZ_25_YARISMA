@@ -6,25 +6,15 @@ import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader
 from torchvision import transforms
-import timm
+import timm #type: ignore
 from PIL import Image
 import glob
 
 class CompetitionJSONGenerator:
-    """
-    Yarışma için model tahminlerini JSON formatında hazırlayan sınıf
-    """
+ 
     
     def __init__(self, takim_adi: str, takim_id: str, aciklama: str = "", versiyon: str = "v1.0"):
-        """
-        JSON generator'ı başlat
-        
-        Args:
-            takim_adi: Takım ismi
-            takim_id: Sistem tarafından verilen takım numarası
-            aciklama: Modelin amacı veya kısa açıklama (opsiyonel)
-            versiyon: Tahmin dosyasının versiyonu (opsiyonel)
-        """
+       
         self.kunye = {
             "takim_adi": takim_adi,
             "takim_id": takim_id,
@@ -34,14 +24,7 @@ class CompetitionJSONGenerator:
         self.tahminler = []
     
     def add_prediction(self, filename: str, stroke: int, stroke_type: int = 3):
-        """
-        Tek bir tahmin ekle
-        
-        Args:
-            filename: Dosya adı (uzantısı ile birlikte, klasör yolu olmadan)
-            stroke: İnme durumu (0: yok, 1: var) - int formatında
-            stroke_type: İnme tipi (0: iskemik, 1: kanamalı, 3: belirsiz/bilinmiyor)
-        """
+
         # Dosya adının sadece isim+uzantı olduğundan emin ol
         filename = os.path.basename(filename)
         
@@ -66,24 +49,14 @@ class CompetitionJSONGenerator:
         self.tahminler.append(prediction)
     
     def generate_json(self) -> Dict[str, Any]:
-        """
-        JSON formatında sonuç üret
-        
-        Returns:
-            Dict: Yarışma formatında JSON dictionary
-        """
+
         return {
             "kunye": self.kunye,
             "tahminler": self.tahminler
         }
     
     def save_json(self, output_path: str):
-        """
-        JSON'u dosyaya kaydet
-        
-        Args:
-            output_path: Çıktı dosyası yolu
-        """
+
         result = self.generate_json()
         
         with open(output_path, 'w', encoding='utf-8') as f:
@@ -93,9 +66,7 @@ class CompetitionJSONGenerator:
         print(f"Toplam {len(self.tahminler)} tahmin kaydedildi.")
     
     def validate_predictions(self):
-        """
-        Tahminleri doğrula
-        """
+
         errors = []
         
         for i, tahmin in enumerate(self.tahminler):
@@ -129,9 +100,6 @@ class CompetitionJSONGenerator:
         return len(errors) == 0
 
 
-# -----------------------------
-# StrokeViT Model
-# -----------------------------
 class StrokeViT(nn.Module):
     def __init__(self, num_classes=1):
         super(StrokeViT, self).__init__()
@@ -155,10 +123,8 @@ class StrokeViT(nn.Module):
 
 def predict_for_competition(model_path: str, test_data_path: str, takim_adi: str, takim_id: str, 
                           output_json_path: str, threshold: float = 0.3, batch_size: int = 8):
-    """
-    StrokeViT modeli ile yarışma için tahmin yap ve JSON olarak kaydet
-    """
-    print(f"🚀 StrokeViT ile yarışma tahminleri başlatılıyor...")
+
+    print(f"🚀 Tahminler başlatılıyor...")
     print(f"Model: {model_path}")
     print(f"Test Data: {test_data_path}")
     
@@ -183,7 +149,7 @@ def predict_for_competition(model_path: str, test_data_path: str, takim_adi: str
     generator = CompetitionJSONGenerator(
         takim_adi=takim_adi,
         takim_id=takim_id,
-        aciklama="StrokeViT Hybrid Model (ResNet50 + ViT)",
+        aciklama="1.Gorev - Morpheus Takımı Tahminleri",
         versiyon="v1.0"
     )
     
@@ -229,15 +195,12 @@ def predict_for_competition(model_path: str, test_data_path: str, takim_adi: str
             if len(batch_images) == 0:
                 continue
                 
-            # Batch'i hazırla ve tahmin yap
             batch_tensor = torch.stack(batch_images).to(device)
             outputs = model(batch_tensor)
             raw_probs = torch.sigmoid(outputs).cpu().numpy().flatten()
             
-            # MODEL TERSİNE EĞİTİLDİĞİ İÇİN PROBABİLİTY'Yİ TERSİNE ÇEVİR
             probs = 1 - raw_probs
             
-            # DEBUG: İlk batch'te detay göster
             if i == 0:
                 print(f"\n🔍 İlk {len(probs)} tahmin (model tersine eğitilmiş):")
                 for j, (name, raw_p, final_p) in enumerate(zip(batch_names, raw_probs, probs)):
@@ -301,20 +264,14 @@ def predict_for_competition(model_path: str, test_data_path: str, takim_adi: str
 
 # Ana çalıştırma fonksiyonu
 def main():
-    """
-    Ana fonksiyon
-    """
     print("=" * 60)
-    print("STROKEViT YARIŞMA JSON HAZIRLAYICI - SON VERSİYON")
-    print("=" * 60)
-    
-    print("KULLANIM:")
+
     predict_for_competition(
         model_path="/home/comp5/ARTEK/SYZ_25_YARISMA/BIRINCI_GOREV/Morpheus/resnet50_strokevit_small/strokevit_best_model_small_resnet.pth",
-        test_data_path="/home/comp5/ARTEK/SYZ_25_YARISMA/deneme_png",
+        test_data_path="/home/comp5/ARTEK/SYZ_25_YARISMA/BIRINCI_GOREV/ornek_veriler/deneme_png",
         takim_adi="Morpheus",
-        takim_id="568784", 
-        output_json_path="final_competition_predictions.json",
+        takim_id="657266", 
+        output_json_path="yarisma_ciktisi.json",
         threshold=0.3,
         batch_size=8
     )
