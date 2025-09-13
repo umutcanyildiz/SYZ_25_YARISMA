@@ -1,24 +1,29 @@
 #!/bin/bash
 
-ENV_NAME=ikinci_gorev_env
+ENV_NAME="ikinci_gorev_env"
+PYTHON_VERSION="3.10"
 
-PYTHON_BIN=~/.local/python-3.10.12/bin/python3
+# Sistemdeki python3.10 yolunu otomatik bul
+PYTHON_BIN=$(command -v python${PYTHON_VERSION})
 
-$PYTHON_BIN -m venv ~/ARTEK/SYZ_25/$ENV_NAME
+if [ -z "$PYTHON_BIN" ]; then
+  echo "❌ Python ${PYTHON_VERSION} bulunamadı!"
+  exit 1
+fi
 
-source ~/ARTEK/SYZ_25/$ENV_NAME/bin/activate
+# Sanal ortamı scriptin çalıştırıldığı klasöre kur
+VENV_DIR="$PWD/$ENV_NAME"
 
-pip install --upgrade pip
+$PYTHON_BIN -m venv "$VENV_DIR"
+source "$VENV_DIR/bin/activate"
 
-pip install numpy==1.26.4
-
-pip install scipy==1.15.3 scikit-learn matplotlib pandas
-
+python -m pip install --upgrade "pip<25"
+pip install --upgrade numpy==1.26.4
+pip install scipy==1.15.3 scikit-learn matplotlib pandas rich timm pydicom
 pip install pillow opencv-python==4.11.0.86 opencv-contrib-python==4.11.0.86
-
 pip install torch==2.2.2+cu121 torchvision==0.17.2+cu121 torchaudio==2.2.2+cu121 --index-url https://download.pytorch.org/whl/cu121
-
 pip install tqdm seaborn
 
-python -c "import torch; print('✅ CUDA OK' if torch.cuda.is_available() else '🚫 CUDA NOT AVAILABLE')"
+echo "✅ $ENV_NAME kuruldu ve aktif. CUDA kontrolü:"
+python -c "import torch; print('CUDA available:', torch.cuda.is_available())"
 
