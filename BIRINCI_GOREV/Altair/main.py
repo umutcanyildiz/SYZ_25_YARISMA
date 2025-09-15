@@ -4,95 +4,13 @@ from typing import List, Dict, Any
 import numpy as np
 import torch
 import torch.nn as nn
-import torch.nn.functional as F
 from torch.utils.data import DataLoader
-from torchvision import transforms
-import timm #type: ignore
+from torchvision import transforms, models # 'models' import edildi
 from PIL import Image
 import glob
-import math
-from tqdm import tqdm # tqdm kütüphanesi
+from tqdm import tqdm
 import time
 
-class StrokeViT_R50(nn.Module):
-
-    def __init__(
-        self,
-        num_classes: int = 1, # Tahmin için 1 sınıf yeterli (stroke/no-stroke)
-        img_size: int = 384,
-        d_model: int = 512,
-        n_heads: int = 8,
-        num_layers: int = 8,
-        mlp_ratio: int = 4,
-        drop: float = 0.1,
-    ):
-        super().__init__()
-        # ResNet50 backbone (layer3 çıkışı: C=1024, stride=16)
-        self.backbone = timm.create_model(
-            "resnet50", pretrained=True, features_only=True, out_indices=(2,)
-        )
-        c_backbone = self.backbone.feature_info.channels()[-1]  # 1024
-        self.img_size = img_size
-        self.grid_init = img_size // 16  # 384 -> 24
-
-        # Token (C->D) projeksiyon
-        self.proj = nn.Linear(c_backbone, d_model)
-
-        # CLS ve pozisyon embedding (öğrenilebilir)
-        tokens = self.grid_init * self.grid_init
-        self.cls_token = nn.Parameter(torch.zeros(1, 1, d_model))
-        self.pos_embed = nn.Parameter(torch.zeros(1, tokens + 1, d_model))
-        nn.init.trunc_normal_(self.pos_embed, std=0.02)
-        nn.init.trunc_normal_(self.cls_token, std=0.02)
-
-        # Transformer Encoder (batch_first)
-        encoder = nn.TransformerEncoderLayer(
-            d_model=d_model,
-            nhead=n_heads,
-            dim_feedforward=d_model * mlp_ratio,
-            dropout=drop,
-            activation="gelu",
-            batch_first=True,
-            norm_first=True,
-        )
-        self.transformer = nn.TransformerEncoder(encoder, num_layers=num_layers)
-        self.norm = nn.LayerNorm(d_model)
-
-        # Sınıflandırma başı
-        self.head = nn.Linear(d_model, 1 if num_classes == 1 else num_classes)
-        nn.init.trunc_normal_(self.head.weight, std=0.02)
-        nn.init.zeros_(self.head.bias)
-
-    def _pos_embed(self, x_tokens, H, W):
-        """Pozisyon embed'ini (token kısmını) HxW'ye interpolate et, sonra CLS ekle."""
-        B, N, D = x_tokens.shape
-        pe = self.pos_embed  # (1, 1+T, D)
-        cls_pe = pe[:, :1, :]
-        tok_pe = pe[:, 1:, :]  # (1, T, D)
-        t0 = int((tok_pe.shape[1]) ** 0.5)
-        tok_pe_2d = tok_pe.reshape(1, t0, t0, D).permute(0, 3, 1, 2)  # (1,D,t0,t0)
-        tok_pe_2d = F.interpolate(tok_pe_2d, size=(H, W), mode="bicubic", align_corners=False)
-        tok_pe = tok_pe_2d.permute(0, 2, 3, 1).reshape(1, H * W, D)   # (1, H*W, D)
-        pe_resized = torch.cat([cls_pe, tok_pe], dim=1)               # (1, 1+H*W, D)
-        return x_tokens + pe_resized[:, : x_tokens.size(1), :]
-
-    def forward(self, x: torch.Tensor) -> torch.Tensor:
-        feats = self.backbone(x)[0]
-        B, C, H, W = feats.shape
-
-        x_tok = feats.permute(0, 2, 3, 1).reshape(B, H * W, C)
-        x_tok = self.proj(x_tok)
-
-        cls = self.cls_token.expand(B, -1, -1)
-        x_tok = torch.cat([cls, x_tok], dim=1)  # (B, 1+N, D)
-        x_tok = self._pos_embed(x_tok, H, W)
-
-        # Transformer + CLS
-        x_tok = self.transformer(x_tok)
-        cls_out = self.norm(x_tok[:, 0])
-
-        # Logits
-        return self.head(cls_out)
 
 class CompetitionJSONGenerator:
     def __init__(self, takim_adi: str, takim_id: str, aciklama: str = "", versiyon: str = "v1.0"):
@@ -106,7 +24,7 @@ class CompetitionJSONGenerator:
 
     def add_prediction(self, filename: str, stroke: int, stroke_type: int = 3):
         filename = os.path.basename(filename)
-        filename = os.path.splitext(filename)[0] + ".dcm" 
+        filename = os.path.splitext(filename)[0] + ".dcm"
         if isinstance(stroke, (float, np.floating)):
             stroke = int(stroke)
         elif isinstance(stroke, str):
@@ -162,50 +80,51 @@ class CompetitionJSONGenerator:
 
 
 def predict_for_competition(model_path: str, test_data_path: str, takim_adi: str, takim_id: str,
-                            output_json_path: str, threshold: float = 0.3, batch_size: int = 8):
-    # Not: batch_size bu fonksiyonda artık kullanılmıyor.
+                            output_json_path: str, threshold: float = 0.5):
     
     print(f"🚀 Tahminler başlatılıyor...")
-    print(f"Model Mimarisi: StrokeViT_R50")
+    print(f"Model Mimarisi: ResNet-34")
     print(f"Model Dosyası: {model_path}")
     print(f"Test Veri Yolu: {test_data_path}")
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"Kullanılan Cihaz: {device}")
 
-    IMG_SIZE = 384
+    IMG_SIZE = 224
     IMAGENET_MEAN = [0.485, 0.456, 0.406]
     IMAGENET_STD  = [0.229, 0.224, 0.225]
     
     print("📦 Transform ve model hazırlanıyor...")
     transform = transforms.Compose([
-        transforms.Grayscale(num_output_channels=3),
+        transforms.Grayscale(num_output_channels=3), 
         transforms.Resize((IMG_SIZE, IMG_SIZE)),
         transforms.ToTensor(),
         transforms.Normalize(IMAGENET_MEAN, IMAGENET_STD)
     ])
     
-    model = StrokeViT_R50(num_classes=2, img_size=IMG_SIZE)
-    checkpoint = torch.load(model_path, map_location=device)
-    model.load_state_dict(checkpoint['model'])
+    model = models.resnet34(pretrained=False)
+    num_features = model.fc.in_features
+    model.fc = nn.Linear(num_features, 1) 
+    
+    model.load_state_dict(torch.load(model_path, map_location=device))
     model.to(device)
     model.eval()
     print("✅ Model yüklendi ve değerlendirme moduna alındı.")
 
+    # JSON Generator'ı başlat (Bu sınıfın kodun başka bir yerinde tanımlı olduğunu varsayıyoruz)
     generator = CompetitionJSONGenerator(
         takim_adi=takim_adi,
         takim_id=takim_id,
-        aciklama="1.Gorev - Morpheus Takımı Tahminleri (StrokeViT_R50 Mimarisi)",
-        versiyon="v1.1"
+        aciklama="1.Gorev - Morpheus Takımı Tahminleri (ResNet-34 Mimarisi - Ters Olasılık Düzeltmeli)",
+        versiyon="v1.3"
     )
 
     print("🔍 PNG dosyaları aranıyor...")
-    all_files = glob.glob(os.path.join(test_data_path, '**', '*.png'), recursive=True)
-    all_files = sorted(all_files)
-    print(f"📁 {len(all_files)} PNG dosyası bulundu")
+    all_files = sorted(glob.glob(os.path.join(test_data_path, '**', '*.png'), recursive=True))
+    print(f"📁 {len(all_files)} adet PNG dosyası bulundu.")
     
     if not all_files:
-        print("❌ Hiç PNG dosyası bulunamadı!")
+        print("❌ Hiç PNG dosyası bulunamadı! Lütfen test verisi yolunu kontrol edin.")
         return
 
     all_predictions = []
@@ -213,48 +132,44 @@ def predict_for_competition(model_path: str, test_data_path: str, takim_adi: str
     
     print("-" * 70)
     print(">>> BİREYSEL RESİM TAHMİN SÜRECİ BAŞLATILIYOR <<<")
+    print("(Not: Modelin 'tersine' öğrenmiş olma ihtimaline karşı olasılıklar düzeltilmektedir.)")
     print("-" * 70)
 
     with torch.no_grad():
-        # tqdm döngüsü, her bir dosyayı tek tek gezer.
-        for file_path in tqdm(all_files, desc="İşlenen Resimler", unit="resim"):
+        for file_path in tqdm(all_files, desc="Resimler İşleniyor", unit="resim"):
             filename = os.path.basename(file_path)
             
             try:
                 img = Image.open(file_path).convert('RGB')
-                img_tensor = transform(img)
-                input_tensor = img_tensor.unsqueeze(0).to(device)
+                input_tensor = transform(img).unsqueeze(0).to(device)
             except Exception as e:
-                # tqdm.write kullanarak çubuk bozulmasın
-                tqdm.write(f"⚠️  {filename}: Dosya okunamadı! -> {e}")
+                tqdm.write(f"⚠️  {filename}: Dosya okunamadı veya dönüştürülemedi! Hata: {e}")
                 continue
 
             outputs = model(input_tensor)
             
-            probs_all_classes = torch.softmax(outputs, dim=1)
-            raw_prob = probs_all_classes[0, 1].item()
-            final_prob = 1 - raw_prob
+            prob_no_stroke = torch.sigmoid(outputs).item() 
+            prob = 1.0 - prob_no_stroke
             
-            prediction = 1 if final_prob >= threshold else 0
+            prediction = 1 if prob >= threshold else 0
             result_text = "STROKE" if prediction == 1 else "NO_STROKE"
 
             # tqdm.write kullanarak çubuk bozulmasın
-            tqdm.write(f"-> {filename:<30} | Olasılık: {final_prob:.4f} | Sonuç: {result_text}")
-
+            tqdm.write(f"-> {filename:<30} | Olasılık (Stroke): {prob:.4f} | Sonuç: {result_text}")
+            
             # Yavaşlatma - çubuğun görünmesi için
             time.sleep(0.05)
 
-            all_predictions.append(final_prob)
+            all_predictions.append(prob) # Düzeltilmiş olasılığı listeye ekle
             all_filenames.append(filename)
 
     print("-" * 70)
     print(f"✅ Bireysel tahmin süreci tamamlandı.")
     print("-" * 70)
 
-    # Özet istatistikler ve JSON kaydı...
     probs_array = np.array(all_predictions)
     print("\n🔍 Genel İstatistikler:")
-    print(f"  Threshold ({threshold}) üstü: {(probs_array >= threshold).sum()}/{len(probs_array)}")
+    print(f"  Threshold ({threshold}) değeri ve üstü tahmin sayısı: {(probs_array >= threshold).sum()}/{len(probs_array)}")
 
     binary_predictions = (probs_array >= threshold).astype(int)
     
@@ -273,23 +188,21 @@ def predict_for_competition(model_path: str, test_data_path: str, takim_adi: str
         print(f"🎯 Kullanılan threshold: {threshold}")
             
     else:
-        print("❌ Doğrulama başarısız!")
+        print("❌ JSON doğrulama başarısız oldu! Çıktı dosyası oluşturulmadı.")
 
 
 def main():
     print("=" * 60)
-    print("StrokeViT_R50 Mimarisi ile Tahmin Betiği")
+    print("ResNet-34 Mimarisi ile Yarışma Tahmin Betiği")
     print("=" * 60)
 
-    # --- DİKKAT: Yeni modelin yolunu buraya yazın ---
     predict_for_competition(
-        model_path="/home/comp5/ARTEK/SYZ_25_YARISMA/BIRINCI_GOREV/Morpheus/resnet50_strokevit+/strokevit_r50_best.pth", # YENİ MODELİN YOLU
+        model_path="/home/comp5/ARTEK/SYZ_25_YARISMA/BIRINCI_GOREV/Altair/agirlik_model/best_resnet34_model.pth", 
         test_data_path="/home/comp5/ARTEK/SYZ_25_YARISMA/BIRINCI_GOREV/ornek_veriler/deneme_png",
         takim_adi="Morpheus",
         takim_id="657266",
-        output_json_path="yarisma_ciktisi.json", # Çıktı dosya adını değiştirdim
-        threshold=0.5, # Bu eşik değerini validasyon sonucuna göre ayarlayabilirsiniz
-        batch_size=4
+        output_json_path="yarisma_ciktisi.json",
+        threshold=0.3, 
     )
 
 

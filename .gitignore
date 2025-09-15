@@ -1,2 +1,12 @@
 BIRINCI_GOREV/ornek_veriler
 BIRINCI_GOREV/Morpheus/resnet50_strokevit_small/strokevit_best_model_small_resnet.pth
+env_sh_bilgileri/ikinci_gorev_env
+BIRINCI_GOREV/Altair/agirlik_model/best_resnet34_model.pth
+BIRINCI_GOREV/Apeiron/agirlik_model/best_resnet50_model.pth
+BIRINCI_GOREV/Morpheus/resnet50_strokevit+/strokevit_r50_best.pth
+IKINCI_GOREV/MR_testset_PNG
+IKINCI_GOREV/MR_testset
+tf_efficientnetv2_m.in21k_cosine_scheduler_best_olacak.pth
+BIRINCI_GOREV/Altair/agirlik_model/best_resnet34_model.pth
+BIRINCI_GOREV/Apeiron/agirlik_model/best_resnet50_model.pth
+IKINCI_GOREV/efficientNetv2.pth

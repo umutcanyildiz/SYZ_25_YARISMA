@@ -19,6 +19,7 @@ source "$VENV_DIR/bin/activate"
 
 python -m pip install --upgrade "pip<25"
 pip install --upgrade numpy==1.26.4
+pip install pylibjpeg==2.0.0 pylibjpeg-libjpeg==2.2.0
 pip install scipy==1.15.3 scikit-learn matplotlib pandas rich timm pydicom
 pip install pillow opencv-python==4.11.0.86 opencv-contrib-python==4.11.0.86
 pip install torch==2.2.2+cu121 torchvision==0.17.2+cu121 torchaudio==2.2.2+cu121 --index-url https://download.pytorch.org/whl/cu121

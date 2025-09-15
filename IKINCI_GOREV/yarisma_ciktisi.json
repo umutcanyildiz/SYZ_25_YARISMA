@@ -1,0 +1,1282 @@
+{
+    "kunye": {
+        "takim_adi": "TUSEB_SYZ_MR",
+        "takim_id": "0123456",
+        "aciklama": "MR Tahmin Verileri v2.0",
+        "versiyon": "v2.0"
+    },
+    "tahminler": [
+        {
+            "PatientID": "892102",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "809899",
+            "hyperacute_acute": 1,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "880590",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "869574",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "897628",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "857169",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "870588",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "827269",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "846231",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "804628",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "861611",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "875691",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "807277",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "818130",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "822585",
+            "hyperacute_acute": 0,
+            "normal_chronic": 0,
+            "subacute": 1
+        },
+        {
+            "PatientID": "832964",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "864279",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "806235",
+            "hyperacute_acute": 0,
+            "normal_chronic": 0,
+            "subacute": 1
+        },
+        {
+            "PatientID": "865095",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "872764",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "880868",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "884764",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "804447",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "878897",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "852990",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "830270",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "872077",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "891647",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "875255",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "891982",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "824169",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "848524",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "873285",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "843801",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "861089",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "826056",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "853926",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "848102",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "868975",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "856858",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "870894",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "871409",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "859349",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "892761",
+            "hyperacute_acute": 0,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "883128",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "883595",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "851882",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "881613",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "810108",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "899400",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "844671",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "851454",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "859016",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "888546",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "844624",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "895686",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "834011",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "825348",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "869653",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "893360",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "886070",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "839942",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "837880",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "875499",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "895973",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "883317",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "838550",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "844877",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "834673",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "887194",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "862610",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "877056",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "832491",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "896051",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "831361",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "859355",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "865874",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "849992",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "888120",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "824359",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "883439",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "851352",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "842937",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "872882",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "880692",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "882501",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "875472",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "805270",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "869072",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "811225",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "862088",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "875344",
+            "hyperacute_acute": 1,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "836619",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "860891",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "848205",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "855627",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "831386",
+            "hyperacute_acute": 1,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "869663",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "815794",
+            "hyperacute_acute": 0,
+            "normal_chronic": 0,
+            "subacute": 1
+        },
+        {
+            "PatientID": "825590",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "815607",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "871855",
+            "hyperacute_acute": 1,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "829647",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "839245",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "894820",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "809655",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "896270",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "802934",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "844757",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "840902",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "875148",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "842328",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "851775",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "875641",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "806408",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "819350",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "849709",
+            "hyperacute_acute": 0,
+            "normal_chronic": 0,
+            "subacute": 1
+        },
+        {
+            "PatientID": "860496",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "859440",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "878201",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "850258",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "894649",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "861931",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "839225",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "836695",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "893112",
+            "hyperacute_acute": 1,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "876153",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "810208",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "890462",
+            "hyperacute_acute": 1,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "811719",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "893679",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "880599",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "837499",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "868409",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "820907",
+            "hyperacute_acute": 0,
+            "normal_chronic": 0,
+            "subacute": 1
+        },
+        {
+            "PatientID": "873304",
+            "hyperacute_acute": 0,
+            "normal_chronic": 0,
+            "subacute": 1
+        },
+        {
+            "PatientID": "812694",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "837970",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "809012",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "847891",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "888449",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "873131",
+            "hyperacute_acute": 1,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "804865",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "850720",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "892898",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "867721",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "874329",
+            "hyperacute_acute": 1,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "889947",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "804867",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "802059",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "852255",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "818909",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "845518",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "860768",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "861208",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "895003",
+            "hyperacute_acute": 0,
+            "normal_chronic": 0,
+            "subacute": 1
+        },
+        {
+            "PatientID": "867509",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "826663",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "850529",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "803472",
+            "hyperacute_acute": 1,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "894358",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "861241",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "824372",
+            "hyperacute_acute": 1,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "866667",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "867011",
+            "hyperacute_acute": 0,
+            "normal_chronic": 0,
+            "subacute": 1
+        },
+        {
+            "PatientID": "864885",
+            "hyperacute_acute": 1,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "858513",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "867068",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "827878",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "814489",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "801355",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "817335",
+            "hyperacute_acute": 1,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "885722",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "850719",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "859368",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "837782",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "842138",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "832545",
+            "hyperacute_acute": 0,
+            "normal_chronic": 0,
+            "subacute": 1
+        },
+        {
+            "PatientID": "828588",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "880533",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "812952",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "815837",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "805607",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "848796",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "851083",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "828811",
+            "hyperacute_acute": 0,
+            "normal_chronic": 0,
+            "subacute": 1
+        },
+        {
+            "PatientID": "875005",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "853474",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "821639",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "876382",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "831852",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "817152",
+            "hyperacute_acute": 1,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "822005",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "814170",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "853398",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "846567",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "887209",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "833177",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "865603",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "859396",
+            "hyperacute_acute": 0,
+            "normal_chronic": 0,
+            "subacute": 1
+        },
+        {
+            "PatientID": "827607",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "848419",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "895311",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "891467",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "802510",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "880521",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "808448",
+            "hyperacute_acute": 1,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "843955",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "865189",
+            "hyperacute_acute": 1,
+            "normal_chronic": 0,
+            "subacute": 0
+        },
+        {
+            "PatientID": "888507",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "880461",
+            "hyperacute_acute": 0,
+            "normal_chronic": 1,
+            "subacute": 0
+        },
+        {
+            "PatientID": "840526",
+            "hyperacute_acute": 1,
+            "normal_chronic": 1,
+            "subacute": 0
+        }
+    ]
+}
